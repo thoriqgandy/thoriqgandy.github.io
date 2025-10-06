@@ -57,6 +57,15 @@
       border-radius: 8px;
     }
 
+    .product-card h3 {
+      margin-top: 15px;
+    }
+
+    .product-card p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
     .product-card button {
       margin-top: 10px;
       padding: 10px 20px;
@@ -109,6 +118,29 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 5px;
+      }
+
+      section {
+        padding: 20px 10px;
+      }
+
+      .product-card button {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -128,16 +160,22 @@
     <h2>Produk Unggulan</h2>
     <div class="product-grid">
       <div class="product-card">
-        <img src="https://via.placeholder.com/250x150?text=Crocs+Kolab+1" alt="Crocs 1">
-        <h3>Crocs x Streetwear</h3>
-        <p>Rp 499.000</p>
-        <button onclick="addToCart('Crocs x Streetwear', 499000)">Tambah ke Keranjang</button>
+        <img src="https://images.unsplash.com/photo-1618354691228-2f2f1b5e3b4f?auto=format&fit=crop&w=600&q=80" alt="Crocs x Naruto">
+        <h3>Crocs x Naruto</h3>
+        <p>Desain ninja Konohagakure. Rp 599.000</p>
+        <button onclick="addToCart('Crocs x Naruto', 599000)">Tambah ke Keranjang</button>
       </div>
       <div class="product-card">
-        <img src="https://via.placeholder.com/250x150?text=Crocs+Kolab+2" alt="Crocs 2">
-        <h3>Crocs x Anime</h3>
-        <p>Rp 549.000</p>
-        <button onclick="addToCart('Crocs x Anime', 549000)">Tambah ke Keranjang</button>
+        <img src="https://images.unsplash.com/photo-1622664669201-6f6f6f6f6f6f?auto=format&fit=crop&w=600&q=80" alt="Crocs x Shrek">
+        <h3>Crocs x Shrek</h3>
+        <p>Kolaborasi lucu bertema Shrek. Rp 579.000</p>
+        <button onclick="addToCart('Crocs x Shrek', 579000)">Tambah ke Keranjang</button>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1632664669201-6f6f6f6f6f6f?auto=format&fit=crop&w=600&q=80" alt="Crocs x Dragon Ball Z">
+        <h3>Crocs x Dragon Ball Z</h3>
+        <p>Desain epik Saiyan. Rp 649.000</p>
+        <button onclick="addToCart('Crocs x Dragon Ball Z', 649000)">Tambah ke Keranjang</button>
       </div>
     </div>
   </section>
