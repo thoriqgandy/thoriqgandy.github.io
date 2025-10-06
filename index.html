@@ -3,151 +3,230 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portal Karier | PT Masa Depan</title>
+  <title>Zona Game Seru</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f2f4f8;
-      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      background: #1e1e2f;
+      color: #fff;
     }
 
     header {
-      background: linear-gradient(to right, #00b4db, #0083b0);
-      color: white;
+      background: linear-gradient(to right, #ff416c, #ff4b2b);
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
       margin-top: 10px;
     }
 
+    nav {
+      background: #2c2c3e;
+      padding: 10px 0;
+      text-align: center;
+    }
+
     nav a {
-      color: white;
+      color: #fff;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
 
     section {
       padding: 40px 20px;
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
     }
 
-    .jobs li {
-      background: white;
-      padding: 15px;
-      margin-bottom: 10px;
-      border-left: 5px solid #00b4db;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    .game-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    form {
-      background: white;
+    .game-card {
+      background: #29293d;
+      border-radius: 10px;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
     }
 
-    form label {
+    .game-card:hover {
+      transform: scale(1.05);
+    }
+
+    .game-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .game-card h3 {
+      margin-top: 15px;
+    }
+
+    .game-card button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #ff416c;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .game-card button:hover {
+      background: #ff4b2b;
+    }
+
+    .login-box {
+      background: #29293d;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 40px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-box label {
       display: block;
       margin-top: 15px;
       font-weight: bold;
     }
 
-    form input, form select, form textarea {
+    .login-box input {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      border: none;
+      border-radius: 5px;
     }
 
-    form button {
+    .login-box button {
       margin-top: 20px;
-      padding: 12px 20px;
-      background: #00b4db;
-      color: white;
+      width: 100%;
+      padding: 12px;
+      background: #ff416c;
       border: none;
-      border-radius: 4px;
+      border-radius: 5px;
+      color: white;
+      font-size: 1em;
       cursor: pointer;
     }
 
-    form button:hover {
-      background: #0083b0;
+    .login-box button:hover {
+      background: #ff4b2b;
     }
 
     footer {
-      background: #0083b0;
-      color: white;
+      background: #2c2c3e;
       text-align: center;
       padding: 20px;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 5px;
+      }
+
+      section {
+        padding: 20px 10px;
+      }
+
+      .game-card button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Portal Karier PT Masa Depan</h1>
-    <p>Temukan pekerjaan impianmu bersama kami</p>
-    <nav>
-      <ul>
-        <li><a href="#lowongan">Lowongan</a></li>
-        <li><a href="#formulir">Formulir</a></li>
-        <li><a href="#kontak">Kontak</a></li>
-      </ul>
-    </nav>
+    <h1>Zona Game Seru</h1>
+    <p>Mainkan game favoritmu tanpa rasa bosan!</p>
   </header>
 
-  <section id="lowongan">
-    <h2>Lowongan Tersedia</h2>
-    <ul class="jobs">
-      <li><strong>Frontend Developer</strong> - Jakarta</li>
-      <li><strong>Digital Marketing</strong> - Bandung</li>
-      <li><strong>HR Officer</strong> - Surabaya</li>
-    </ul>
+  <nav>
+    <a href="#login">Login</a>
+    <a href="#game">Game</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <section id="login">
+    <div class="login-box">
+      <h2>Login Pengguna</h2>
+      <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Masuk</button>
+      </form>
+    </div>
   </section>
 
-  <section id="formulir">
-    <h2>Formulir Pendaftaran</h2>
-    <form>
-      <label for="nama">Nama Lengkap:</label>
-      <input type="text" id="nama" name="nama" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="posisi">Posisi yang Dilamar:</label>
-      <select id="posisi" name="posisi">
-        <option value="frontend">Frontend Developer</option>
-        <option value="marketing">Digital Marketing</option>
-        <option value="hr">HR Officer</option>
-      </select>
-
-      <label for="cv">Upload CV:</label>
-      <input type="file" id="cv" name="cv">
-
-      <label for="pesan">Pesan Tambahan:</label>
-      <textarea id="pesan" name="pesan" rows="4"></textarea>
-
-      <button type="submit">Kirim Lamaran</button>
-    </form>
+  <section id="game">
+    <h2>Daftar Game</h2>
+    <div class="game-list">
+      <div class="game-card">
+        <img src="https://via.placeholder.com/250x150?text=Game+1" alt="Game 1">
+        <h3>Petualangan Pixel</h3>
+        <button>Mainkan</button>
+      </div>
+      <div class="game-card">
+        <img src="https://via.placeholder.com/250x150?text=Game+2" alt="Game 2">
+        <h3>Balap Gila</h3>
+        <button>Mainkan</button>
+      </div>
+      <div class="game-card">
+        <img src="https://via.placeholder.com/250x150?text=Game+3" alt="Game 3">
+        <h3>Zombie Hunter</h3>
+        <button>Mainkan</button>
+      </div>
+      <div class="game-card">
+        <img src="https://via.placeholder.com/250x150?text=Game+4" alt="Game 4">
+        <h3>Brain Puzzle</h3>
+        <button>Mainkan</button>
+      </div>
+    </div>
   </section>
 
   <section id="kontak">
     <h2>Hubungi Kami</h2>
-    <p>Email: karier@ptmasadepan.co.id</p>
-    <p>Telepon: (021) 98765432</p>
+    <p>Email: support@zonagameseru.id</p>
+    <p>Instagram: @zonagameseru</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 PT Masa Depan. All rights reserved.</p>
+    <p>&copy; 2025 Zona Game Seru. Semua hak dilindungi.</p>
   </footer>
+
 </body>
 </html>
