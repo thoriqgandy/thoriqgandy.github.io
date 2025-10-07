@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Crocs x Kolaborator</title>
+  <title>PRESMA | Prestasi Mahasiswa</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
+      background: #f4f6f8;
       color: #333;
     }
 
     header {
-      background: linear-gradient(to right, #00c6ff, #0072ff);
+      background: linear-gradient(to right, #0066cc, #00aaff);
       color: white;
       text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
     }
 
     nav {
-      background: #0072ff;
+      background: #0055aa;
       padding: 10px;
       text-align: center;
     }
@@ -38,73 +38,48 @@
       margin: auto;
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .product-card {
+    .prestasi-list {
       background: white;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    .product-card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .product-card h3 {
-      margin-top: 15px;
-    }
-
-    .product-card p {
-      font-size: 0.95em;
-      color: #555;
-    }
-
-    .product-card button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #00c6ff;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      cursor: pointer;
-    }
-
-    #cart {
-      background: #fff;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .prestasi-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .prestasi-item:last-child {
+      border-bottom: none;
+    }
+
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       margin-top: 40px;
     }
 
-    #cart ul {
-      list-style: none;
-      padding: 0;
+    form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
     }
 
-    #cart li {
-      margin-bottom: 10px;
-    }
-
-    form input, form select {
+    form input, form textarea, form select {
       width: 100%;
       padding: 10px;
-      margin-top: 10px;
-      border-radius: 5px;
+      margin-top: 5px;
       border: 1px solid #ccc;
+      border-radius: 5px;
     }
 
     form button {
       margin-top: 20px;
       padding: 12px;
-      background: #0072ff;
+      background: #0066cc;
       color: white;
       border: none;
       border-radius: 5px;
@@ -112,7 +87,7 @@
     }
 
     footer {
-      background: #0072ff;
+      background: #0055aa;
       color: white;
       text-align: center;
       padding: 20px;
@@ -124,10 +99,6 @@
         font-size: 1.8em;
       }
 
-      header p {
-        font-size: 1em;
-      }
-
       nav a {
         display: inline-block;
         margin: 10px 5px;
@@ -137,7 +108,7 @@
         padding: 20px 10px;
       }
 
-      .product-card button {
+      form button {
         width: 100%;
       }
     }
@@ -146,93 +117,70 @@
 <body>
 
   <header>
-    <h1>Crocs x Kolaborator</h1>
-    <p>Edisi terbatas sandal Crocs hasil kolaborasi eksklusif</p>
+    <h1>PRESMA</h1>
+    <p>Portal Prestasi Mahasiswa Universitas</p>
   </header>
 
   <nav>
-    <a href="#produk">Produk</a>
-    <a href="#cart">Keranjang</a>
-    <a href="#checkout">Checkout</a>
+    <a href="#daftar">Daftar Prestasi</a>
+    <a href="#unggah">Unggah Prestasi</a>
+    <a href="#kontak">Kontak</a>
   </nav>
 
-  <section id="produk">
-    <h2>Produk Unggulan</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1618354691228-2f2f1b5e3b4f?auto=format&fit=crop&w=600&q=80" alt="Crocs x Naruto">
-        <h3>Crocs x Naruto</h3>
-        <p>Desain ninja Konohagakure. Rp 599.000</p>
-        <button onclick="addToCart('Crocs x Naruto', 599000)">Tambah ke Keranjang</button>
+  <section id="daftar">
+    <h2>Daftar Prestasi Mahasiswa</h2>
+    <div class="prestasi-list">
+      <div class="prestasi-item">
+        <strong>Nama:</strong> Rina Andini<br>
+        <strong>Prestasi:</strong> Juara 1 Lomba Karya Tulis Ilmiah Nasional<br>
+        <strong>Tingkat:</strong> Nasional<br>
+        <strong>Tahun:</strong> 2025
       </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1622664669201-6f6f6f6f6f6f?auto=format&fit=crop&w=600&q=80" alt="Crocs x Shrek">
-        <h3>Crocs x Shrek</h3>
-        <p>Kolaborasi lucu bertema Shrek. Rp 579.000</p>
-        <button onclick="addToCart('Crocs x Shrek', 579000)">Tambah ke Keranjang</button>
-      </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1632664669201-6f6f6f6f6f6f?auto=format&fit=crop&w=600&q=80" alt="Crocs x Dragon Ball Z">
-        <h3>Crocs x Dragon Ball Z</h3>
-        <p>Desain epik Saiyan. Rp 649.000</p>
-        <button onclick="addToCart('Crocs x Dragon Ball Z', 649000)">Tambah ke Keranjang</button>
+      <div class="prestasi-item">
+        <strong>Nama:</strong> Budi Santoso<br>
+        <strong>Prestasi:</strong> Medali Emas Olimpiade Matematika ASEAN<br>
+        <strong>Tingkat:</strong> Internasional<br>
+        <strong>Tahun:</strong> 2024
       </div>
     </div>
   </section>
 
-  <section id="cart">
-    <h2>Keranjang Belanja</h2>
-    <ul id="cart-items"></ul>
-    <p><strong>Total: Rp <span id="total">0</span></strong></p>
-  </section>
+  <section id="unggah">
+    <h2>Unggah Prestasi Baru</h2>
+    <form>
+      <label for="nama">Nama Mahasiswa:</label>
+      <input type="text" id="nama" name="nama" required>
 
-  <section id="checkout">
-    <h2>Checkout & Pembayaran</h2>
-    <form onsubmit="submitOrder(event)">
-      <input type="text" placeholder="Nama Lengkap" required>
-      <input type="email" placeholder="Email" required>
-      <select required>
-        <option value="">Pilih Metode Pembayaran</option>
-        <option value="transfer">Transfer Bank</option>
-        <option value="cod">Bayar di Tempat</option>
-        <option value="ewallet">E-Wallet</option>
+      <label for="prestasi">Jenis Prestasi:</label>
+      <input type="text" id="prestasi" name="prestasi" required>
+
+      <label for="tingkat">Tingkat Prestasi:</label>
+      <select id="tingkat" name="tingkat">
+        <option value="Universitas">Universitas</option>
+        <option value="Regional">Regional</option>
+        <option value="Nasional">Nasional</option>
+        <option value="Internasional">Internasional</option>
       </select>
-      <button type="submit">Bayar Sekarang</button>
+
+      <label for="tahun">Tahun:</label>
+      <input type="number" id="tahun" name="tahun" required>
+
+      <label for="deskripsi">Deskripsi Prestasi:</label>
+      <textarea id="deskripsi" name="deskripsi" rows="4"></textarea>
+
+      <button type="submit">Kirim Prestasi</button>
     </form>
   </section>
 
+  <section id="kontak">
+    <h2>Kontak Kami</h2>
+    <p>Email: presma@universitas.ac.id</p>
+    <p>Instagram: @presma.universitas</p>
+  </section>
+
   <footer>
-    <p>&copy; 2025 Crocs x Kolaborator. Semua hak dilindungi.</p>
+    <p>&copy; 2025 PRESMA Universitas. Semua hak dilindungi.</p>
   </footer>
-
-  <script>
-    let cart = [];
-    function addToCart(name, price) {
-      cart.push({ name, price });
-      updateCart();
-    }
-
-    function updateCart() {
-      const cartList = document.getElementById('cart-items');
-      const totalDisplay = document.getElementById('total');
-      cartList.innerHTML = '';
-      let total = 0;
-      cart.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = `${item.name} - Rp ${item.price.toLocaleString()}`;
-        cartList.appendChild(li);
-        total += item.price;
-      });
-      totalDisplay.textContent = total.toLocaleString();
-    }
-
-    function submitOrder(e) {
-      e.preventDefault();
-      alert("Pesanan kamu berhasil dikirim! Terima kasih telah belanja.");
-      cart = [];
-      updateCart();
-    }
-  </script>
 
 </body>
 </html>
