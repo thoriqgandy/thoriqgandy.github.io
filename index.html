@@ -1,186 +1,258 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PRESMA | Prestasi Mahasiswa</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SMKS ISLAM MALAHAYATI</title>
   <style>
+    :root {
+      --toska: #00bfa6;
+      --biru-muda: #a2d5f2;
+      --putih: #ffffff;
+      --gelap: #1c1c1c;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f4f6f8;
-      color: #333;
+      background: linear-gradient(to bottom right, var(--toska), var(--biru-muda));
+      color: var(--gelap);
+      overflow-x: hidden;
     }
 
     header {
-      background: linear-gradient(to right, #0066cc, #00aaff);
-      color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 80px 20px 40px;
+      color: var(--putih);
+      background: linear-gradient(to right, var(--toska), var(--biru-muda));
+      animation: fadeIn 1.5s ease;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
     }
 
     nav {
-      background: #0055aa;
-      padding: 10px;
-      text-align: center;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
     }
 
-    nav a {
-      color: white;
-      margin: 0 15px;
+    .menu-toggle {
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .menu-toggle span {
+      height: 4px;
+      background: var(--putih);
+      border-radius: 2px;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: var(--putih);
+      box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+      padding: 60px 20px;
+      transition: left 0.3s ease;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 20px 0;
+      color: var(--toska);
       text-decoration: none;
       font-weight: bold;
     }
 
     section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
+      animation: fadeInUp 1s ease;
     }
 
-    .prestasi-list {
-      background: white;
+    .card {
+      background: var(--putih);
       padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+
+    .testimoni {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .testi-box {
+      background: var(--putih);
+      padding: 15px;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    .prestasi-item {
-      border-bottom: 1px solid #ddd;
-      padding: 15px 0;
+    .testi-box p {
+      font-style: italic;
     }
 
-    .prestasi-item:last-child {
-      border-bottom: none;
-    }
-
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-top: 40px;
-    }
-
-    form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-
-    form input, form textarea, form select {
+    form input, form textarea {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
+      margin-top: 10px;
       border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
     form button {
-      margin-top: 20px;
+      margin-top: 15px;
       padding: 12px;
-      background: #0066cc;
-      color: white;
+      background: var(--toska);
+      color: var(--putih);
       border: none;
       border-radius: 5px;
       cursor: pointer;
     }
 
     footer {
-      background: #0055aa;
-      color: white;
+      background: var(--gelap);
+      color: var(--putih);
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 30px 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.8em;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 10px 5px;
+        font-size: 2em;
       }
 
       section {
-        padding: 20px 10px;
-      }
-
-      form button {
-        width: 100%;
+        padding: 40px 15px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>PRESMA</h1>
-    <p>Portal Prestasi Mahasiswa Universitas</p>
-  </header>
-
   <nav>
-    <a href="#daftar">Daftar Prestasi</a>
-    <a href="#unggah">Unggah Prestasi</a>
-    <a href="#kontak">Kontak</a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="sidebar" id="sidebar">
+      <a href="#profil">Profil Sekolah</a>
+      <a href="#visi">Visi & Misi</a>
+      <a href="#program">Program Sekolah</a>
+      <a href="#kontak">Kontak Sekolah</a>
+    </div>
   </nav>
 
-  <section id="daftar">
-    <h2>Daftar Prestasi Mahasiswa</h2>
-    <div class="prestasi-list">
-      <div class="prestasi-item">
-        <strong>Nama:</strong> Rina Andini<br>
-        <strong>Prestasi:</strong> Juara 1 Lomba Karya Tulis Ilmiah Nasional<br>
-        <strong>Tingkat:</strong> Nasional<br>
-        <strong>Tahun:</strong> 2025
-      </div>
-      <div class="prestasi-item">
-        <strong>Nama:</strong> Budi Santoso<br>
-        <strong>Prestasi:</strong> Medali Emas Olimpiade Matematika ASEAN<br>
-        <strong>Tingkat:</strong> Internasional<br>
-        <strong>Tahun:</strong> 2024
+  <header>
+    <h1>SMKS ISLAM MALAHAYATI</h1>
+    <p>Yayasan Bina Bersama Indomas</p>
+  </header>
+
+  <section id="profil">
+    <div class="card">
+      <h2>Profil Sekolah</h2>
+      <p>SMKS Islam Malahayati adalah sekolah menengah kejuruan berbasis Islam yang berkomitmen membentuk generasi unggul, berakhlak, dan siap kerja. Terletak di lingkungan yang kondusif, kami menyediakan fasilitas modern dan tenaga pengajar profesional.</p>
+    </div>
+  </section>
+
+  <section id="visi">
+    <div class="card">
+      <h2>Visi & Misi</h2>
+      <p><strong>Visi:</strong> Menjadi SMK Islam unggulan yang menghasilkan lulusan berkompetensi tinggi dan berakhlak mulia.</p>
+      <p><strong>Misi:</strong></p>
+      <ul>
+        <li>Meningkatkan kualitas pembelajaran berbasis teknologi.</li>
+        <li>Menanamkan nilai-nilai keislaman dalam kehidupan sekolah.</li>
+        <li>Menjalin kemitraan dengan dunia industri dan usaha.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="program">
+    <div class="card">
+      <h2>Program Keahlian</h2>
+      <ul>
+        <li><strong>TJKT</strong> - Teknik Jaringan Komputer dan Telekomunikasi</li>
+        <li><strong>AKL</strong> - Akuntansi dan Keuangan Lembaga</li>
+        <li><strong>AP</strong> - Administrasi Perkantoran</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h2>Testimoni Alumni</h2>
+      <div class="testimoni">
+        <div class="testi-box">
+          <p>"SMKS Islam Malahayati membentuk saya menjadi pribadi yang disiplin dan siap kerja."</p>
+          <strong>- Ahmad, Alumni TJKT</strong>
+        </div>
+        <div class="testi-box">
+          <p>"Guru-gurunya sangat peduli dan pembelajarannya praktis banget."</p>
+          <strong>- Siti, Alumni AKL</strong>
+        </div>
+        <div class="testi-box">
+          <p>"Lingkungan Islami dan fasilitas lengkap bikin betah belajar."</p>
+          <strong>- Riko, Alumni AP</strong>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="unggah">
-    <h2>Unggah Prestasi Baru</h2>
-    <form>
-      <label for="nama">Nama Mahasiswa:</label>
-      <input type="text" id="nama" name="nama" required>
-
-      <label for="prestasi">Jenis Prestasi:</label>
-      <input type="text" id="prestasi" name="prestasi" required>
-
-      <label for="tingkat">Tingkat Prestasi:</label>
-      <select id="tingkat" name="tingkat">
-        <option value="Universitas">Universitas</option>
-        <option value="Regional">Regional</option>
-        <option value="Nasional">Nasional</option>
-        <option value="Internasional">Internasional</option>
-      </select>
-
-      <label for="tahun">Tahun:</label>
-      <input type="number" id="tahun" name="tahun" required>
-
-      <label for="deskripsi">Deskripsi Prestasi:</label>
-      <textarea id="deskripsi" name="deskripsi" rows="4"></textarea>
-
-      <button type="submit">Kirim Prestasi</button>
-    </form>
-  </section>
-
   <section id="kontak">
-    <h2>Kontak Kami</h2>
-    <p>Email: presma@universitas.ac.id</p>
-    <p>Instagram: @presma.universitas</p>
+    <div class="card">
+      <h2>Formulir Kontak</h2>
+      <form>
+        <input type="text" placeholder="Nama Lengkap" required />
+        <input type="email" placeholder="Email" required />
+        <textarea rows="4" placeholder="Pesan Anda..." required></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 PRESMA Universitas. Semua hak dilindungi.</p>
+    <p>&copy; 2025 SMKS Islam Malahayati. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+  </script>
 
 </body>
 </html>
